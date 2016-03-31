@@ -12,17 +12,11 @@ Masonry.js is an open-source jQuery-plugin for creating horizontal "masonry" lay
 
 There are a few requirements in terms of markup:
 
-1. All img-tags have to be wrapped in a common container (ie. div)
+1. All img-tags have to be wrapped in a common container (ie. a-tag or div)
 2. Img-tags also need to be individually wrapped into a container like figure or div, which should have float: left style. This way the borders can work correctly.
 3. Img-tags must also have width and height attributes defined with preferably correct values
 
 ## Example ##
-
-CSS needed:
-
-    div#masonry div {
-        float: left;
-    }
 
 Javascript:
 
@@ -34,10 +28,10 @@ Javascript:
 Markup:
 
     <div id="masonry">
-        <a href="image01-large.jpg" target="_blank"><div><img src="image-01.jpg" width="2048" height="1369"/></div></a>
-        <a href="image02-large.jpg" target="_blank"><div><img src="image02.jpg" width="2048" height="1280"/></div></a>
+        <a href="image01-large.jpg" target="_blank"><img src="image-01.jpg" width="2048" height="1369"/></a>
+        <a href="image02-large.jpg" target="_blank"><img src="image02.jpg" width="2048" height="1280"/></a>
         ...
-        <a href="image99-large.jpg" target="_blank"><div><img src="image99.jpg" width="1370" height="2048 /></div></a>
+        <a href="image99-large.jpg" target="_blank"><img src="image99.jpg" width="1370" height="2048 /></a>
     </div>
 
 

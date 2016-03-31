@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  * 
- * @see https://www.strobotti.com/masonryjs
+ * @see https://www.strobotti.com/en/project/masonry
  */
 (function ( $ ) {
     $.fn.masonry = function ( options ) {
@@ -84,13 +84,13 @@
                 sumAspectRatios+= getImgWidth(imgs[index + i]) / getImgHeight(imgs[index + i]);
             }
 
-            $( imgs[index] ).parent().css('clear', 'left').css('display', 'inline-block');
+            $( imgs[index] ).parent().css('clear', 'left');
 
             for (i = 0; i < imagesInRow; i++) {
                 var width = ((getImgWidth(imgs[index + i]) / getImgHeight(imgs[index + i])) / sumAspectRatios) * 100;
 
                 // inline-block instead of block to prevent unwanted wrapping
-                $( imgs[index + i] ).css('max-width', '99.9%').css('height', 'auto').css('display', 'inline-block');
+                $( imgs[index + i] ).css('max-width', '99.9%').css('height', 'auto').css('display', 'block');
 
                 // left and right borders are correctly "collapsed" but top and bottom are not, hence we have to divide them by two
                 $( imgs[index + i] ).css('border-top', Math.round(settings.borderWidth / 2) + 'px');
@@ -101,7 +101,7 @@
 
                 width = Math.floor(width * 100) / 100;
 
-                $( imgs[index + i] ).parent().css('width', width + '%');
+                $( imgs[index + i] ).parent().css('width', width + '%').css('float', 'left').css('display', 'block');
             }
 
             index+= (imagesInRow - 1);
