@@ -41,9 +41,11 @@ Markup:
     </div>
 
 
-See it in action [here](https://www.strobotti.com/album/showroom?useMasonryJs)
+See it in action [here](https://www.strobotti.com/album/showroom?useMasonryJs) working in combination with [Lazy Load Plugin](http://www.appelsiini.net/projects/lazyload).
 
 
 ## License ##
 
 This software is [MIT licensed](https://en.m.wikipedia.org/wiki/MIT_License).
+
+Project homepage is here: [https://www.strobotti.com/en/project/masonry](https://www.strobotti.com/en/project/masonry)
