@@ -12,8 +12,8 @@ Masonry.js is an open-source jQuery-plugin for creating horizontal "masonry" lay
 
 There are a few requirements in terms of markup:
 
-1. All img-tags have to be wrapped in a common container (ie. a-tag or div)
-2. Img-tags also need to be individually wrapped into a container like figure or div, which should have float: left style. This way the borders can work correctly.
+1. All img-tags have to be wrapped in a common container (ie. div)
+2. Img-tags also need to be individually wrapped into a container like figure, a or div
 3. Img-tags must also have width and height attributes defined with preferably correct values
 
 ## Example ##
