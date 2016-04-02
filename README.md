@@ -13,15 +13,14 @@ Masonry.js is an open-source jQuery-plugin for creating horizontal "masonry" lay
 There are a few requirements in terms of markup:
 
 1. All img-tags have to be wrapped in a common container (ie. div)
-2. Img-tags also need to be individually wrapped into a container like figure, a or div
-3. Img-tags must also have width and height attributes defined with preferably correct values
+2. Img-tags must have width and height attributes defined with preferably correct values
 
 ## Example ##
 
 Javascript:
 
     $(document).ready(function() {
-        $('div#masonry').masonry({rowMinAspectRatio: 3.3, borderWidth: 4});
+        $('div#masonry').masonry({rowMinAspectRatio: 3.3});
     });
 
 
@@ -34,9 +33,14 @@ Markup:
         <a href="image99-large.jpg" target="_blank"><img src="image99.jpg" width="1370" height="2048 /></a>
     </div>
 
+To set borders use css:
+
+    <style>
+        box-sizing: border-box;
+        border: 2px solid #fff;
+    </style>
 
 See it in action [here](https://www.strobotti.com/album/showroom?useMasonryJs) working in combination with [Lazy Load Plugin](http://www.appelsiini.net/projects/lazyload).
-
 
 ## License ##
 
