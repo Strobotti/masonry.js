@@ -36,7 +36,11 @@
         }
 
         function getImgHeight(img) {
-            return parseInt($( img ).attr('height'))
+            return parseInt($( img ).attr('height'));
+        }
+
+        function getImgAspectRatio(img) {
+            return getImgWidth(img) / getImgHeight(img);
         }
 
         // we're only interested in img-tags (and their direct parents)
@@ -60,23 +64,31 @@
                 imagesInRow = Math.max(imagesInRow, subIndex - index);
             } while (rowRealWidth / rowRealHeight < settings.rowMinAspectRatio && subIndex < imgs.length);
 
+            if (imgs.length - (imagesInRow + index) == 1) {
+                // don't leave an image alone
+                if (imagesInRow > 2) {
+                    imagesInRow--;
+                } else {
+                    imagesInRow++;
+                }
+            }
+
             var sumAspectRatios = 0;
 
             for (var i = 0; i < imagesInRow; i++) {
-                sumAspectRatios+= getImgWidth(imgs[index + i]) / getImgHeight(imgs[index + i]);
+                sumAspectRatios+= getImgAspectRatio(imgs[index + i]);
             }
 
             $( imgs[index] ).css('clear', 'left');
 
             for (i = 0; i < imagesInRow; i++) {
-                var width = ((getImgWidth(imgs[index + i]) / getImgHeight(imgs[index + i])) / sumAspectRatios) * 100;
+                var width = (getImgAspectRatio(imgs[index + i]) / sumAspectRatios) * 100;
 
                 // inline-block instead of block to prevent unwanted wrapping
                 $( imgs[index + i] ).css('width', width + '%')
                     .css('height', 'auto')
                     .css('float', 'left')
                     .css('display', 'block')
-                    .css('display', 'block');
             }
 
             index+= (imagesInRow - 1);
